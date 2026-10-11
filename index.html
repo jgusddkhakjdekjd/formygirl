@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Sweet Angel❤️✨</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-dark: #06040d;
+            --accent-pink: #ec4899;
+            --accent-purple: #a855f7;
+            --accent-rose: #f43f5e;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-dark);
+            color: #f3e8ff;
+            overflow-x: hidden;
+        }
+
+        .font-serif-custom {
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        /* Glassmorphism Styles */
+        .glass-card {
+            background: rgba(18, 12, 32, 0.65);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(236, 72, 153, 0.22);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+
+        .glass-card-hover {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .glass-card-hover:hover {
+            transform: translateY(-6px);
+            border-color: rgba(236, 72, 153, 0.5);
+            box-shadow: 0 12px 40px 0 rgba(236, 72, 153, 0.25);
+        }
+
+        /* Text Glow Effects */
+        .glow-title {
+            text-shadow: 0 0 25px rgba(244, 114, 182, 0.6), 0 0 50px rgba(168, 85, 247, 0.3);
+        }
+
+        .glow-subtle {
+            text-shadow: 0 0 12px rgba(244, 114, 182, 0.4);
+        }
+
+        /* Star Twinkle Animation */
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.15; transform: scale(0.8); }
+            50% { opacity: 0.95; transform: scale(1.2); }
+        }
+
+        .star {
+            position: absolute;
+            background-color: #ffffff;
+            border-radius: 50%;
+            animation: twinkle 4s ease-in-out infinite;
+        }
+
+        /* Floating Animation */
+        @keyframes gentleFloat {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-12px) rotate(1deg); }
+        }
+
+        .float-animation {
+            animation: gentleFloat 5s ease-in-out infinite;
+        }
+
+        /* Pulse Glow Animation */
+        @keyframes pulseGlow {
+            0%, 100% { opacity: 0.4; filter: blur(20px); }
+            50% { opacity: 0.8; filter: blur(30px); }
+        }
+
+        .pulse-glow {
+            animation: pulseGlow 4s ease-in-out infinite;
+        }
+
+        /* Bunny Hug Animations */
+        .bunny-arm-left {
+            transform-origin: 65px 110px;
+            transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .bunny-arm-right {
+            transform-origin: 135px 110px;
+            transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .hugging .bunny-arm-left {
+            transform: rotate(42deg) translateX(12px) translateY(-4px);
+        }
+
+        .hugging .bunny-arm-right {
+            transform: rotate(-42deg) translateX(-12px) translateY(-4px);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #06040d;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(236, 72, 153, 0.3);
+            border-radius: 9999px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(236, 72, 153, 0.6);
+        }
+
+        /* Heart Particle */
+        @keyframes floatUpAndFade {
+            0% {
+                opacity: 1;
+                transform: translateY(0) scale(0.6) rotate(0deg);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-140px) scale(1.4) rotate(25deg);
+            }
+        }
+
+        .particle-heart {
+            position: absolute;
+            pointer-events: none;
+            animation: floatUpAndFade 1.2s cubic-bezier(0.21, 0.61, 0.35, 1) forwards;
+        }
+
+        /* Envelope Flap Transition */
+        .envelope-top {
+            transform-origin: top;
+            transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .envelope-open .envelope-top {
+            transform: rotateX(180deg);
+        }
+    </style>
+</head>
+<body class="min-h-screen relative flex flex-col items-center justify-start antialiased selection:bg-pink-500 selection:text-white">
+
+    <!-- Ambient Background Lighting -->
+    <div class="fixed top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-pink-600/20 rounded-full pulse-glow pointer-events-none z-0"></div>
+    <div class="fixed bottom-1/4 left-1/3 w-[400px] h-[400px] bg-purple-600/15 rounded-full pulse-glow pointer-events-none z-0" style="animation-delay: 2s;"></div>
+
+    <!-- Starfield Container -->
+    <div id="starfield" class="fixed inset-0 pointer-events-none z-0 overflow-hidden"></div>
+
+    <!-- Floating Audio Music Player Widget -->
+    <aside class="fixed top-5 right-5 z-50 glass-card rounded-full px-4 py-2.5 flex items-center space-x-3 shadow-2xl border border-pink-500/30">
+        <div id="vinyl-icon" class="w-8 h-8 rounded-full bg-gradient-to-tr from-pink-500 to-purple-600 flex items-center justify-center text-white text-xs shadow-md transition-transform duration-700">
+            🎵
+        </div>
+        <div class="text-left hidden sm:block pr-2">
+            <p class="text-xs font-semibold text-pink-200 leading-tight">Our Safe Haven</p>
+            <p class="text-[10px] text-purple-300/80">Soft romantic melody</p>
+        </div>
+        <button id="music-toggle-btn" class="bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white rounded-full p-2.5 transition transform active:scale-90 shadow-lg" title="Play background song">
+            <svg id="play-icon" class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            <svg id="pause-icon" class="w-3.5 h-3.5 fill-current hidden" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+        </button>
+        <!-- Synthesized Soft Audio Generator via Web Audio API when clicked -->
+    </aside>
+
+    <!-- Main Content Layout Container -->
+    <main class="relative z-10 w-full max-w-4xl px-4 sm:px-6 py-12 sm:py-16 flex flex-col items-center space-y-16">
+
+        <!-- Hero Section -->
+        <section class="text-center space-y-6 pt-6 float-animation">
+            <div class="inline-flex items-center space-x-2 glass-card px-4 py-1.5 rounded-full border border-pink-500/30 text-pink-300 text-xs font-medium tracking-widest uppercase">
+                <span class="animate-pulse">✨</span>
+                <span>FOR MY ONE AND ONLY QUEEN</span>
+                <span class="animate-pulse">✨</span>
+            </div>
+            
+            <h1 class="font-serif-custom text-4xl sm:text-6xl md:text-7xl font-bold text-pink-100 glow-title leading-tight">
+                To My Sweet Angel, <br>
+                <span class="italic font-normal text-pink-300">My Whole World ❤️</span>
+            </h1>
+
+            <p class="max-w-xl mx-auto text-sm sm:text-base text-purple-200/90 font-light leading-relaxed">
+                I built this sacred digital space just for you. Take a soft breath, play our melody, and let me open my entire soul to you below...
+            </p>
+
+            <div class="pt-2">
+                <a href="#letter-section" class="inline-flex items-center space-x-2 text-xs text-pink-400 hover:text-pink-300 transition-colors duration-300">
+                    <span>Scroll down to open your heart</span>
+                    <svg class="w-4 h-4 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+                </a>
+            </div>
+        </section>
+
+        <!-- Interactive Envelope & Letter Section -->
+        <section id="letter-section" class="w-full max-w-2xl">
+            <div id="envelope-wrapper" class="glass-card glass-card-hover rounded-3xl p-6 sm:p-10 text-center cursor-pointer relative overflow-hidden" onclick="openApologyLetter()">
+                
+                <!-- Envelope Graphic State -->
+                <div id="envelope-closed-state" class="flex flex-col items-center space-y-4 py-8">
+                    <div class="relative w-28 h-20 bg-pink-950/40 border-2 border-pink-500/40 rounded-xl flex items-center justify-center shadow-2xl">
+                        <div class="absolute inset-0 bg-gradient-to-b from-pink-500/10 to-purple-600/20 rounded-xl"></div>
+                        <span class="text-4xl transform transition-transform duration-500 hover:scale-125">💌</span>
+                    </div>
+                    <h2 class="font-serif-custom text-2xl font-semibold text-pink-200">Tap to Open My Heart</h2>
+                    <p class="text-xs text-purple-300/80 max-w-xs">A letter written with genuine tears, full accountability, and endless love.</p>
+                </div>
+
+                <!-- Open Letter State -->
+                <div id="envelope-open-state" class="hidden text-left space-y-6 pt-2">
+                    <div class="flex items-center justify-between border-b border-pink-500/20 pb-4">
+                        <span class="font-serif-custom italic text-xl sm:text-2xl text-pink-200">My Sweetest Angel,</span>
+                        <span class="text-[11px] text-pink-400/70 uppercase tracking-widest">From My Soul</span>
+                    </div>
+
+                    <!-- Typewriter Text Container -->
+                    <div id="typewriter-text" class="text-sm sm:text-base text-purple-100/90 leading-relaxed space-y-4 font-light min-h-[220px]">
+                        <!-- JS injects animated text here -->
+                    </div>
+
+                    <div id="letter-signature" class="opacity-0 transition-opacity duration-1000 pt-6 border-t border-pink-500/20 text-right space-y-1">
+                        <p class="font-serif-custom italic text-lg text-pink-300">Forever Yours & Only Yours,</p>
+                        <p class="text-xs text-purple-300/80">Holding you tightly through the screen 🥺❤️✨</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Interactive Hugging & Kissing Bunny Station -->
+        <section class="w-full max-w-2xl glass-card rounded-3xl p-6 sm:p-10 flex flex-col items-center text-center space-y-6">
+            <div class="space-y-2">
+                <span class="text-pink-400 text-xs font-semibold uppercase tracking-widest">Interactive Comfort</span>
+                <h3 class="font-serif-custom text-2xl sm:text-3xl font-bold text-pink-100">Need a Warm Hold Right Now?</h3>
+                <p class="text-xs sm:text-sm text-purple-200/80 max-w-md">Whenever you feel a shadow of doubt or hurt, tap the soft bunny to get a virtual embrace from me.</p>
+            </div>
+
+            <!-- SVG Animated Bunny -->
+            <div id="bunny-wrapper" class="relative cursor-pointer py-2 select-none group" onclick="triggerBunnyHug()">
+                <!-- Floating Speech Bubble -->
+                <div id="bunny-speech" class="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-pink-600 to-purple-600 text-white text-[11px] font-medium px-4 py-1.5 rounded-full shadow-2xl opacity-0 transition-all duration-300 whitespace-nowrap z-20 pointer-events-none">
+                    *Holding you close forever!* 🫂💖
+                </div>
+
+                <svg id="bunny-svg" class="w-36 h-36 sm:w-44 sm:h-44 transition-transform duration-300 group-hover:scale-105" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Bunny Ears -->
+                    <ellipse cx="78" cy="45" rx="14" ry="38" fill="#fbcfe8" transform="rotate(-12 78 45)"/>
+                    <ellipse cx="78" cy="45" rx="7" ry="26" fill="#f472b6" transform="rotate(-12 78 45)"/>
+                    
+                    <ellipse cx="122" cy="45" rx="14" ry="38" fill="#fbcfe8" transform="rotate(12 122 45)"/>
+                    <ellipse cx="122" cy="45" rx="7" ry="26" fill="#f472b6" transform="rotate(12 122 45)"/>
+
+                    <!-- Bunny Head & Body -->
+                    <circle cx="100" cy="120" r="48" fill="#fbcfe8"/>
+                    <circle cx="100" cy="92" r="38" fill="#fbcfe8"/>
+
+                    <!-- Cheeks Blush -->
+                    <circle cx="78" cy="98" r="7" fill="#f472b6" opacity="0.5"/>
+                    <circle cx="122" cy="98" r="7" fill="#f472b6" opacity="0.5"/>
+
+                    <!-- Eyes (Sleeping/Cute) -->
+                    <path d="M 72 88 Q 78 94 84 88" stroke="#4a044e" stroke-width="3" stroke-linecap="round" fill="none"/>
+                    <path d="M 116 88 Q 122 94 128 88" stroke="#4a044e" stroke-width="3" stroke-linecap="round" fill="none"/>
+
+                    <!-- Nose & Mouth -->
+                    <polygon points="97,97 103,97 100,101" fill="#ec4899"/>
+                    <path d="M 96 103 Q 100 106 104 103" stroke="#4a044e" stroke-width="2" stroke-linecap="round" fill="none"/>
+
+                    <!-- Center Heart Bunny Holds -->
+                    <path id="bunny-center-heart" class="transition-transform duration-300" d="M100 138 C93 125 72 120 72 102 C72 88 86 82 100 95 C114 82 128 88 128 102 C128 120 107 125 100 138 Z" fill="#f43f5e"/>
+
+                    <!-- Animated Arms -->
+                    <path class="bunny-arm-left" d="M 65 118 Q 45 118 52 135" stroke="#fbcfe8" stroke-width="12" stroke-linecap="round" fill="none"/>
+                    <path class="bunny-arm-right" d="M 135 118 Q 155 118 148 135" stroke="#fbcfe8" stroke-width="12" stroke-linecap="round" fill="none"/>
+                </svg>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="flex flex-wrap justify-center gap-3 w-full">
+                <button onclick="triggerBunnyHug()" class="bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white text-xs sm:text-sm font-semibold px-6 py-3 rounded-full shadow-lg transition transform active:scale-95 flex items-center space-x-2">
+                    <span>Send a Tight Bear Hug 🫂</span>
+                </button>
+                <button onclick="triggerBunnyKiss()" class="bg-pink-950/60 border border-pink-500/40 hover:bg-pink-900/60 text-pink-200 text-xs sm:text-sm font-semibold px-6 py-3 rounded-full shadow-lg transition transform active:scale-95 flex items-center space-x-2">
+                    <span>Send Soft Kisses 💋</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Reasons Why You Are My Whole World -->
+        <section class="w-full space-y-8">
+            <div class="text-center space-y-2">
+                <span class="text-pink-400 text-xs font-semibold uppercase tracking-widest">Endless Devotion</span>
+                <h3 class="font-serif-custom text-3xl sm:text-4xl font-bold text-pink-100">Why You Mean Everything To Me</h3>
+                <p class="text-xs sm:text-sm text-purple-200/80">Tap any card to read why you are completely irreplaceable.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <!-- Card 1 -->
+                <div class="glass-card glass-card-hover rounded-2xl p-6 space-y-3 cursor-pointer" onclick="toggleCardDetail(this)">
+                    <div class="flex items-center justify-between">
+                        <span class="text-2xl">👑</span>
+                        <span class="text-[10px] text-pink-400 font-mono">01 / QUEEN</span>
+                    </div>
+                    <h4 class="font-serif-custom text-xl font-semibold text-pink-200">Your Pure & Loving Heart</h4>
+                    <p class="text-xs text-purple-200/80 leading-relaxed">You give love with such grace and kindness. Even when I messed up, your softness shines through, and I promise to spend my life cherishing that heart.</p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="glass-card glass-card-hover rounded-2xl p-6 space-y-3 cursor-pointer" onclick="toggleCardDetail(this)">
+                    <div class="flex items-center justify-between">
+                        <span class="text-2xl">🏰</span>
+                        <span class="text-[10px] text-pink-400 font-mono">02 / HOME</span>
+                    </div>
+                    <h4 class="font-serif-custom text-xl font-semibold text-pink-200">My Only Safe Place</h4>
+                    <p class="text-xs text-purple-200/80 leading-relaxed">In a crowded world, your voice is my peace. The thought of ever making you feel unsafe or disrespected breaks me, because you are my true home.</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="glass-card glass-card-hover rounded-2xl p-6 space-y-3 cursor-pointer" onclick="toggleCardDetail(this)">
+                    <div class="flex items-center justify-between">
+                        <span class="text-2xl">💎</span>
+                        <span class="text-[10px] text-pink-400 font-mono">03 / SACRED</span>
+                    </div>
+                    <h4 class="font-serif-custom text-xl font-semibold text-pink-200">Your Unconditional Trust</h4>
+                    <p class="text-xs text-purple-200/80 leading-relaxed">Your trust is the most sacred gift I have ever received. I am holding it like delicate glass from now on, protecting it against any pain.</p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="glass-card glass-card-hover rounded-2xl p-6 space-y-3 cursor-pointer" onclick="toggleCardDetail(this)">
+                    <div class="flex items-center justify-between">
+                        <span class="text-2xl">✨</span>
+                        <span class="text-[10px] text-pink-400 font-mono">04 / BLESSING</span>
+                    </div>
+                    <h4 class="font-serif-custom text-xl font-semibold text-pink-200">My Greatest Blessing</h4>
+                    <p class="text-xs text-purple-200/80 leading-relaxed">Every single day with you is a gift I never take for granted. You make me want to be a better, gentler, and stronger man for you always.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Sacred Promises Section -->
+        <section class="w-full glass-card rounded-3xl p-6 sm:p-10 space-y-8">
+            <div class="text-center space-y-2">
+                <span class="text-pink-400 text-xs font-semibold uppercase tracking-widest">Unbreakable Vows</span>
+                <h3 class="font-serif-custom text-3xl sm:text-4xl font-bold text-pink-100">My Sacred Promises To You</h3>
+                <p class="text-xs sm:text-sm text-purple-200/80">These are not just words—they are commitments etched in my heart forever.</p>
+            </div>
+
+            <div class="space-y-4">
+                <div class="flex items-start space-x-4 border-b border-pink-500/15 pb-4">
+                    <div class="w-8 h-8 rounded-full bg-pink-500/20 text-pink-300 flex items-center justify-center font-bold text-xs shrink-0">1</div>
+                    <div>
+                        <h5 class="text-sm font-semibold text-pink-200">Protecting Your Dignity Above Everything</h5>
+                        <p class="text-xs text-purple-200/70 mt-0.5">I will never use careless or hurtful words ever again. Your honor and respect come before my ego every single second.</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start space-x-4 border-b border-pink-500/15 pb-4">
+                    <div class="w-8 h-8 rounded-full bg-pink-500/20 text-pink-300 flex items-center justify-center font-bold text-xs shrink-0">2</div>
+                    <div>
+                        <h5 class="text-sm font-semibold text-pink-200">Listening With Full Open Heart</h5>
+                        <p class="text-xs text-purple-200/70 mt-0.5">Whenever you feel hurt or down, I will never tell you to 'cool down' or retreat. I will stay by your side and hold space for your feelings.</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start space-x-4">
+                    <div class="w-8 h-8 rounded-full bg-pink-500/20 text-pink-300 flex items-center justify-center font-bold text-xs shrink-0">3</div>
+                    <div>
+                        <h5 class="text-sm font-semibold text-pink-200">Reaffirming You Unconditionally</h5>
+                        <p class="text-xs text-purple-200/70 mt-0.5">I will spend every day making sure you know how gorgeous, cherished, and adored you are to me in every single way.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Love & Reassurance Generator -->
+        <section class="w-full text-center space-y-6">
+            <div class="space-y-2">
+                <span class="text-pink-400 text-xs font-semibold uppercase tracking-widest">Instant Comfort</span>
+                <h3 class="font-serif-custom text-2xl sm:text-3xl font-bold text-pink-100">Need Reassurance Right Now?</h3>
+            </div>
+
+            <div class="glass-card rounded-2xl p-6 sm:p-8 min-h-[140px] flex flex-col items-center justify-center space-y-3 relative overflow-hidden">
+                <p id="reassurance-quote" class="font-serif-custom italic text-lg sm:text-xl text-pink-200 transition-opacity duration-500 max-w-lg">
+                    "You are my whole world, my sweet angel, and nothing will ever change how deeply I love and honor you."
+                </p>
+            </div>
+
+            <button onclick="generateReassurance()" class="bg-gradient-to-r from-purple-600 to-pink-500 hover:from-purple-700 hover:to-pink-600 text-white text-xs font-semibold px-8 py-3 rounded-full shadow-xl transition transform active:scale-95">
+                Click for Endless Love 🥺✨
+            </button>
+        </section>
+
+        <!-- Final Footer -->
+        <footer class="text-center space-y-3 pt-8 pb-12 border-t border-pink-500/20 w-full">
+            <p class="font-serif-custom italic text-2xl text-pink-200 glow-subtle">Yours Forever & Always, In Every Lifetime</p>
+            <p class="text-xs text-purple-300/60">Built solely for my sweet girl's heart ♾️❤️‍🔥</p>
+        </footer>
+
+    </main>
+
+    <script>
+        // --- 1. Starfield Particle Background Generation ---
+        const starfield = document.getElementById('starfield');
+        const starCount = 70;
+
+        for (let i = 0; i < starCount; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            const size = Math.random() * 2.8 + 0.8;
+            star.style.width = `${size}px`;
+            star.style.height = `${size}px`;
+            star.style.top = `${Math.random() * 100}%`;
+            star.style.left = `${Math.random() * 100}%`;
+            star.style.animationDelay = `${Math.random() * 4}s`;
+            star.style.animationDuration = `${Math.random() * 3 + 2}s`;
+            starfield.appendChild(star);
+        }
+
+        // --- 2. Ambient Melody Synthesizer (Web Audio API) ---
+        let audioCtx = null;
+        let isAudioPlaying = false;
+        let melodyInterval = null;
+
+        const musicBtn = document.getElementById('music-toggle-btn');
+        const playIcon = document.getElementById('play-icon');
+        const pauseIcon = document.getElementById('pause-icon');
+        const vinylIcon = document.getElementById('vinyl-icon');
+
+        function playRomanticChords() {
+            if (!audioCtx) {
+                audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            }
+            if (audioCtx.state === 'suspended') {
+                audioCtx.resume();
+            }
+
+            const notes = [261.63, 329.63, 392.00, 523.25, 440.00, 349.23]; // C4, E4, G4, C5, A4, F4
+            let noteIdx = 0;
+
+            melodyInterval = setInterval(() => {
+                if (!isAudioPlaying) return;
+
+                const osc = audioCtx.createOscillator();
+                const gain = audioCtx.createGain();
+
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(notes[noteIdx % notes.length], audioCtx.currentTime);
+
+                gain.gain.setValueAtTime(0.001, audioCtx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.08, audioCtx.currentTime + 0.5);
+                gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 2.8);
+
+                osc.connect(gain);
+                gain.connect(audioCtx.destination);
+
+                osc.start();
+                osc.stop(audioCtx.currentTime + 3.0);
+
+                noteIdx++;
+            }, 1400);
+        }
+
+        musicBtn.addEventListener('click', () => {
+            if (isAudioPlaying) {
+                isAudioPlaying = false;
+                clearInterval(melodyInterval);
+                playIcon.classList.remove('hidden');
+                pauseIcon.classList.add('hidden');
+                vinylIcon.classList.remove('animate-spin');
+            } else {
+                isAudioPlaying = true;
+                playRomanticChords();
+                playIcon.classList.add('hidden');
+                pauseIcon.classList.remove('hidden');
+                vinylIcon.classList.add('animate-spin');
+            }
+        });
+
+        // --- 3. Typewriter Letter Animation ---
+        let isLetterOpened = false;
+        const letterParagraphs = [
+           "i made this whole space for you because my heart could not rest knowing i caused even a second of pain to my sweet angel you are the absolute center of my life and the most precious person i have ever known in this world",
+            "it breaks something deep inside my soul knowing that my foolish words made you feel anything less than adored respected and completely cherished i take total accountability for my mistakes and i promise with everything in me to protect your heart higher than anything else forever",
+            "you are my peace my queen and my safe place and I never ever want to be the reason you feel unsure or pushed away let me wrap you up tight in my arms tonight and make you feel as deeply loved and adored as you truly are"
+        ];
+
+        function openApologyLetter() {
+            if (isLetterOpened) return;
+            isLetterOpened = true;
+
+            document.getElementById('envelope-closed-state').classList.add('hidden');
+            const openState = document.getElementById('envelope-open-state');
+            openState.classList.remove('hidden');
+
+            const container = document.getElementById('typewriter-text');
+            const signature = document.getElementById('letter-signature');
+
+            let pIndex = 0;
+            let charIndex = 0;
+
+            function typeNextChar() {
+                if (pIndex < letterParagraphs.length) {
+                    if (charIndex === 0) {
+                        const p = document.createElement('p');
+                        p.id = `para-${pIndex}`;
+                        p.className = "leading-relaxed";
+                        container.appendChild(p);
+                    }
+
+                    const currentP = document.getElementById(`para-${pIndex}`);
+                    const fullText = letterParagraphs[pIndex];
+
+                    currentP.textContent += fullText.charAt(charIndex);
+                    charIndex++;
+
+                    if (charIndex < fullText.length) {
+                        setTimeout(typeNextChar, 18);
+                    } else {
+                        pIndex++;
+                        charIndex = 0;
+                        setTimeout(typeNextChar, 250);
+                    }
+                } else {
+                    signature.classList.remove('opacity-0');
+                }
+            }
+
+            typeNextChar();
+        }
+
+        // --- 4. Interactive Bunny Hug & Kiss Actions ---
+        function triggerBunnyHug() {
+            const wrapper = document.getElementById('bunny-wrapper');
+            const speech = document.getElementById('bunny-speech');
+            const heart = document.getElementById('bunny-center-heart');
+
+            wrapper.classList.add('hugging');
+            speech.textContent = "Holding you close forever! 🫂💖";
+            speech.style.opacity = '1';
+            heart.setAttribute('transform', 'scale(1.2) translate(-15, -15)');
+
+            spawnFloatingParticles(['💖', '🥺', '✨', '🫂', '❤️']);
+
+            setTimeout(() => {
+                wrapper.classList.remove('hugging');
+                speech.style.opacity = '0';
+                heart.removeAttribute('transform');
+            }, 1800);
+        }
+
+        function triggerBunnyKiss() {
+            const speech = document.getElementById('bunny-speech');
+            speech.textContent = "Mwahhhhh! Infinite kisses for my angel! 💋✨";
+            speech.style.opacity = '1';
+
+            spawnFloatingParticles(['💋', '❤️‍🔥', '✨', '💖', '🥰']);
+
+            setTimeout(() => {
+                speech.style.opacity = '0';
+            }, 1800);
+        }
+
+        function spawnFloatingParticles(emojis) {
+            const container = document.getElementById('bunny-wrapper');
+            for (let i = 0; i < 7; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle-heart text-xl z-30';
+                particle.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+                particle.style.left = `${40 + Math.random() * 40}%`;
+                particle.style.top = `${30 + Math.random() * 30}%`;
+                container.appendChild(particle);
+
+                setTimeout(() => particle.remove(), 1200);
+            }
+        }
+
+        // --- 5. Interactive Memory Cards Toggle ---
+        function toggleCardDetail(cardElement) {
+            spawnFloatingParticles(['✨', '💖']);
+            cardElement.classList.add('scale-[1.02]');
+            setTimeout(() => cardElement.classList.remove('scale-[1.02]'), 300);
+        }
+
+        // --- 6. Reassurance Quote Generator ---
+        const quotes = [
+            "\"You are my whole world, my sweet angel, and nothing will ever change how deeply I love and honor you.\"",
+            "\"I never want you to feel unsafe or doubted. Your heart is my home forever.\"",
+            "\"I promise to hold your trust like sacred glass and protect your dignity above everything else.\"",
+            "\"No matter what happens, I am right here holding you close and loving you endlessly.\"",
+            "\"You are my queen, my soft place, and my greatest blessing in this life.\""
+        ];
+
+        let currentQuoteIdx = 0;
+
+        function generateReassurance() {
+            const quoteElem = document.getElementById('reassurance-quote');
+            quoteElem.style.opacity = '0';
+
+            setTimeout(() => {
+                currentQuoteIdx = (currentQuoteIdx + 1) % quotes.length;
+                quoteElem.textContent = quotes[currentQuoteIdx];
+                quoteElem.style.opacity = '1';
+                spawnFloatingParticles(['🥺', '❤️', '✨']);
+            }, 300);
+        }
+    </script>
+</body>
+</html>
